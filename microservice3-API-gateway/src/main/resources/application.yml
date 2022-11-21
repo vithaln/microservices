@@ -1,0 +1,10 @@
+server:  port: 8005
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: micro
+        uri: http://localhost:8001
+        predicates:        - Path=/test        
+      - id: micro2        uri: http://localhost:8001        predicates:        - Path=/payment              - id: micro3        uri: http://localhost:8001        predicates:        - Path=/test    
+             - id: micro4        uri: http://localhost:8001        predicates:        - Path=/micro1                  - id: resileince        uri: http://localhost:8001        predicates:        - Path=/a     
